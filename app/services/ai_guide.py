@@ -70,8 +70,8 @@ User Question:
 {message}
 """
 
-    model_name = settings.gemini_model or "gemini-2.5-flash"
-    fallback_models = [model_name, "gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+    model_name = settings.gemini_model or "gemini-3.8-flash"
+    fallback_models = [model_name, "gemini-3.8-flash", "gemini-2.5-flash", "gemini-2.0-flash"]
     # Deduplicate while preserving order
     seen = set()
     models_to_try = [m for m in fallback_models if not (m in seen or seen.add(m))]

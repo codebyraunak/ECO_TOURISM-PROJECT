@@ -64,7 +64,7 @@ responsive, nature-inspired CSS design.
 - Recommends wildlife sanctuaries, hidden waterfalls, eco-homestays, trekking trails, and local cuisine.
 - Supports multi-language guidance (English, Kannada, Hindi).
 - Interactive chat UI at `/ai-guide` with quick prompt suggestions and markdown-formatted travel itineraries.
-- REST API endpoint at `POST /ai-guide/chat` with configurable model support (`gemini-2.5-flash`, `gemini-1.5-flash`, etc.).
+- REST API endpoint at `POST /ai-guide/chat` with configurable model support (`gemini-3.8-flash`, `gemini-2.5-flash`, etc.).
 
 
 ### Environmental observations (admin only)
@@ -154,7 +154,7 @@ Requirements: Python and pip.
    ALGORITHM=HS256
    APP_NAME=Eco Tourism Management Portal
    GEMINI_API_KEY=your_gemini_api_key_here
-   GEMINI_MODEL=gemini-2.5-flash
+   GEMINI_MODEL=gemini-3.8-flash
    ```
 
 4. Start the development server:
