@@ -58,6 +58,15 @@ responsive, nature-inspired CSS design.
 - View a live-updating total in the browser.
 - Signed-in users can save budget plans and view their saved plans.
 
+### EcoGuide AI Travel Assistant (Powered by Google Gemini)
+
+- Conversational AI travel assistant specialized in Karnataka eco-tourism.
+- Recommends wildlife sanctuaries, hidden waterfalls, eco-homestays, trekking trails, and local cuisine.
+- Supports multi-language guidance (English, Kannada, Hindi).
+- Interactive chat UI at `/ai-guide` with quick prompt suggestions and markdown-formatted travel itineraries.
+- REST API endpoint at `POST /ai-guide/chat` with configurable model support (`gemini-2.5-flash`, `gemini-1.5-flash`, etc.).
+
+
 ### Environmental observations (admin only)
 
 - Authorized admins can submit destination-linked observations with a timestamp
@@ -144,6 +153,8 @@ Requirements: Python and pip.
    SECRET_KEY=replace-with-a-long-random-secret
    ALGORITHM=HS256
    APP_NAME=Eco Tourism Management Portal
+   GEMINI_API_KEY=your_gemini_api_key_here
+   GEMINI_MODEL=gemini-2.5-flash
    ```
 
 4. Start the development server:
@@ -184,6 +195,7 @@ accounts and use a secure `SECRET_KEY` before deploying the application.
 | Reviews | `GET /reviews`, `POST /places/{place_id}/reviews`, `POST /reviews/{review_id}/delete` |
 | Complaints and admin response | `GET /complaints`, `POST /complaints`, `POST /complaints/{complaint_id}/respond` |
 | Budget planner | `GET /budget`, `POST /budget` |
+| EcoGuide AI Travel Assistant | `GET /ai-guide`, `POST /ai-guide/chat` |
 | Dashboard | `GET /dashboard` |
 | Environmental monitoring (admin only) | `GET /environmental`, `POST /environmental/observations` |
 

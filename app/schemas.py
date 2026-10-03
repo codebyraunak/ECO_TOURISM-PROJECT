@@ -130,3 +130,14 @@ class EnvironmentalObservationCreate(BaseModel):
     local_tourism_revenue_inr: Optional[float] = Field(default=None, ge=0)
 
     notes: Optional[str] = Field(default=None, max_length=2000)
+
+
+class AIRequest(BaseModel):
+    message: str = Field(..., min_length=1, description="Traveler query or prompt")
+    language: str = Field(default="English", description="Response language (e.g., English, Kannada, Hindi)")
+
+
+class AIResponse(BaseModel):
+    answer: str
+    language: str
+

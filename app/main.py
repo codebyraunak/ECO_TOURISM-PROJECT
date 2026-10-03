@@ -14,6 +14,7 @@ from app.config import settings
 from app.database import engine, get_db, init_db
 from app.dependencies import get_current_user, get_current_user_optional
 from app.models import Place, Review, SavedPlace, User
+from app.routers.ai_guide import router as ai_guide_router
 from app.routers.bookings import router as bookings_router
 from app.routers.budget import router as budget_router
 from app.routers.complaints import router as complaints_router
@@ -166,3 +167,5 @@ app.include_router(complaints_router)
 app.include_router(budget_router)
 app.include_router(dashboard_router)
 app.include_router(environmental_router)
+app.include_router(ai_guide_router)
+

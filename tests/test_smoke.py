@@ -202,3 +202,28 @@ def test_environmental_monitoring_is_admin_only_and_validates_observations():
     )
     assert invalid.status_code == 422
     assert "greater than or equal to 0" in invalid.text
+
+
+def test_ai_guide_page_loads():
+    response = client.get("/ai-guide")
+    assert response.status_code == 200
+    assert "EcoGuide" in response.text
+    assert "AI Nature Guide" in response.text
+    assert "Karnataka" in response.text
+
+
+def test_ai_guide_chat_endpoint():
+    response = client.post(
+        "/ai-guide/chat",
+        json={
+            "message": "Suggest top 3 eco-destinations in Karnataka",
+            "language": "English",
+        },
+    )
+    assert response.status_code == 200
+    data = response.json()
+    assert "answer" in data
+    assert "language" in data
+    assert data["language"] == "English"
+    assert len(data["answer"]) > 0
+
